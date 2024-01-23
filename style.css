@@ -1,0 +1,247 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background: radial-gradient(#111628, #0b0f1d);
+    font-family: 'Roboto Mono', Arial, sans-serif;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(24, 56, 24, 0.57), rgba(40, 109, 40, 0.68));
+    opacity: 0;
+    transition: 150ms ease;
+    z-index: -1;
+    will-change: opacity;
+}
+body.success::before {
+    animation: success 2.5s;
+}
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(244, 67, 54, 0.8), rgba(206, 55, 44, 0.48));
+    opacity: 0;
+    transition: 500ms ease;
+    z-index: -1;
+    will-change: opacity;
+}
+body.gameover::after {
+    opacity: 1;
+}
+
+#countdown {
+    height: 20vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 15vh;
+    line-height: 20vh;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+#screen-wrapper {
+    overflow: hidden;
+    height: 100vh;
+}
+
+#screens {
+    width: 400%;
+    height: 100%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    transition: 500ms ease;
+    will-change: transform;
+}
+
+[data-step="1"] #screens {
+    transform: translateX(-100vw);
+}
+[data-step="2"] #screens {
+    transform: translateX(-200vw);
+}
+[data-step="3"] #screens {
+    transform: translateX(-300vw);
+}
+[data-step="4"] #screens {
+    transform: translateX(-400vw);
+}
+[data-step="5"] #screens {
+    transform: translateX(-500vw);
+}
+[data-step="6"] #screens {
+    transform: translateX(-600vw);
+}
+[data-step="7"] #screens {
+    transform: translateX(-700vw);
+}
+[data-step="8"] #screens {
+    transform: translateX(-800vw);
+}
+[data-step="9"] #screens {
+    transform: translateX(-900vw);
+}
+[data-step="10"] #screens {
+    transform: translateX(-1000vw);
+}
+[data-step="11"] #screens {
+    transform: translateX(-1100vw);
+}
+[data-step="12"] #screens {
+    transform: translateX(-1200vw);
+}
+[data-step="13"] #screens {
+    transform: translateX(-1300vw);
+}
+[data-step="14"] #screens {
+    transform: translateX(-1400vw);
+}
+[data-step="15"] #screens {
+    transform: translateX(-1500vw);
+}
+[data-step="16"] #screens {
+    transform: translateX(-1600vw);
+}
+[data-step="17"] #screens {
+    transform: translateX(-1700vw);
+}
+[data-step="18"] #screens {
+    transform: translateX(-1800vw);
+}
+[data-step="19"] #screens {
+    transform: translateX(-1900vw);
+}
+[data-step="20"] #screens {
+    transform: translateX(-2000vw);
+}
+.screen {
+    flex: 1 0 25%;
+    text-align: center;
+    padding: 2em;
+}
+
+.lesson {
+    text-align: left;
+}
+
+.lock-input {
+    background: #fff1dc;
+    padding: 50px 75px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px #000;
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    transition: 150ms ease;
+    display: inline-block;
+}
+
+.lock-input2 {
+    background: radial-gradient(#111628, #0b0f1d);
+    padding: 0px 0px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000;
+    margin: 0px 0;
+    text-align: center;
+    overflow: hidden;
+    transition: 150ms ease;
+    display: inline-block;
+}
+
+.lock-input.error {
+    background: #ffacba;
+    animation: shake 300ms;
+}
+
+.lock-input2.error {
+    background: #ffacba;
+    animation: shake 300ms;
+}
+
+.note {
+    display: inline-block;
+}
+
+.note svg {
+    width: 55px;
+    height: 75px;
+    transform: translateY(750px);
+    transition: 150ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.note2 {
+    display: inline-block;
+}
+
+.note2 svg {
+    width: 0px;
+    height: 0px;
+    transform: translateY(750px);
+    transition: 150ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+
+.note.on svg {
+    transform: translateY(0px);
+}
+
+.step0, .step17, .step20 {
+    font-size: 3vw;
+}
+
+.intro {
+    font-weight: 100;
+    font-size: 0.8em;
+
+}
+
+.hint {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+
+@keyframes success {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
